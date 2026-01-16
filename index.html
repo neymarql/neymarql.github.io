@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Long Qian (Neymar QL) | AI Researcher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Homepage of Long Qian (钱隆, Neymar QL), PhD student in Artificial Intelligence at UCAS & Researcher at CASIA." />
+  <meta name="description" content="Homepage of Long Qian (钱隆, Neymar QL), PhD student in Artificial Intelligence at UCAS & CASIA." />
 
   <!-- Fonts: Plus Jakarta Sans for headings, Inter for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -201,11 +201,7 @@
     .nav-icon { width: 14px; height: 14px; opacity: 0.9; display: inline-block; }
     .nav-icon svg { width: 14px; height: 14px; display: block; }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
 
     /* Language switch (kept) */
     .lang-switch {
@@ -425,15 +421,8 @@
       border: 1px solid var(--panel-inner-border);
       gap: 10px;
     }
-    body[data-theme="light"] .contact-row {
-      background: rgba(15,23,42,0.03);
-    }
-    .contact-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-    }
+    body[data-theme="light"] .contact-row { background: rgba(15,23,42,0.03); }
+    .contact-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
     .contact-left span.value {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -557,9 +546,7 @@
       border: 2px solid var(--accent-primary);
       box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.10);
     }
-    body[data-theme="dark"] .timeline-item::before {
-      box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.10);
-    }
+    body[data-theme="dark"] .timeline-item::before { box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.10); }
 
     .timeline-date {
       font-size: 12px;
@@ -568,7 +555,30 @@
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    /* NEW: tiny badge icons for accept/award/competition */
+    .tl-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      background: rgba(79,70,229,0.08);
+      border: 1px solid rgba(79,70,229,0.16);
+      color: var(--text-muted);
+    }
+    body[data-theme="dark"] .tl-badge {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-muted);
+    }
+    .tl-badge svg { width: 12px; height: 12px; display: block; opacity: 0.95; }
+
     .timeline-content {
       background: linear-gradient(to right, rgba(79,70,229,0.05), transparent);
       padding: 16px 16px;
@@ -937,7 +947,7 @@
     </div>
 
     <div class="nav-right">
-      <!-- THEME TOGGLE (NEW) -->
+      <!-- THEME TOGGLE -->
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
         <span class="theme-dot" aria-hidden="true"></span>
         <span class="theme-icon" aria-hidden="true" id="themeIcon">
@@ -950,7 +960,7 @@
         <span id="themeLabel">Light</span>
       </button>
 
-      <!-- Language switch (existing) -->
+      <!-- Language switch -->
       <div class="lang-switch" role="tablist" aria-label="Language switch">
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="zh">CN</button>
@@ -971,8 +981,8 @@
           </h1>
 
           <div class="profile-title">
-            <span class="lang-block lang-en">AI Researcher · Neymar QL</span>
-            <span class="lang-block lang-zh">AI 研究员 · Neymar QL</span>
+            <span class="lang-block lang-en">PhD Student · Neymar QL</span>
+            <span class="lang-block lang-zh">博士研究生 · Neymar QL</span>
           </div>
 
           <!-- Institutions -->
@@ -1007,20 +1017,20 @@
           <div class="tags-container">
             <span class="tag">VLM</span>
             <span class="tag">MoE</span>
+            <span class="tag">AI4S</span>
             <span class="tag">Anomaly Detection</span>
             <span class="tag">Instance Segmentation</span>
             <span class="tag">Object Detection & Tracking</span>
-            <span class="tag">AI4S</span>
           </div>
 
           <div class="profile-bio">
             <span class="lang-block lang-en">
-              PhD student at UCAS and researcher at CASIA (Zidong Taichu). My research directions are relatively independent:
-              VLM, MoE, anomaly detection, instance segmentation, object detection & tracking, and AI for Science (AI4S).
+              PhD student at UCAS and working with CASIA (Zidong Taichu). My research directions are relatively independent:
+              VLM, MoE, AI4S, anomaly detection, instance segmentation, and object detection & tracking.
             </span>
             <span class="lang-block lang-zh">
-              国科大博士研究生，中科院自动化所紫东太初团队成员。研究方向相对独立：
-              VLM、MoE、异常检测、实例分割、目标检测与追踪，以及 AI4S。
+              国科大博士研究生，同时在中科院自动化所紫东太初团队开展科研工作。研究方向相对独立：
+              VLM、MoE、AI4S、异常检测、实例分割、目标检测与追踪。
             </span>
           </div>
 
@@ -1070,25 +1080,16 @@
         </div>
 
         <div class="timeline">
-          <!-- 2026 -->
+          <!-- ICASSP accepted -->
           <div class="timeline-item">
-            <div class="timeline-date">2026.02</div>
-            <div class="timeline-content">
-              <h3 class="lang-block lang-en">AAAI 2026 Accepted</h3>
-              <h3 class="lang-block lang-zh">AAAI 2026 论文录用</h3>
-              <div class="timeline-sub">
-                <span class="lang-block lang-en">
-                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.
-                </span>
-                <span class="lang-block lang-zh">
-                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。
-                </span>
-              </div>
+            <div class="timeline-date">
+              <span class="tl-badge" aria-hidden="true" title="Paper Accepted">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              2026.01.17
             </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">2026.01.17</div>
             <div class="timeline-content">
               <h3 class="lang-block lang-en">ICASSP 2026 Accepted</h3>
               <h3 class="lang-block lang-zh">ICASSP 2026 论文接收</h3>
@@ -1103,9 +1104,16 @@
             </div>
           </div>
 
-          <!-- 2025 -->
+          <!-- ICAIS 2025 award -->
           <div class="timeline-item">
-            <div class="timeline-date">2025.11</div>
+            <div class="timeline-date">
+              <span class="tl-badge" aria-hidden="true" title="Award">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 21h8M12 17v4M7 3h10v5a5 5 0 0 1-10 0V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              2025.11
+            </div>
             <div class="timeline-content">
               <h3 class="lang-block lang-en">1st Place · ICAIS 2025 (Literature Q&A Track)</h3>
               <h3 class="lang-block lang-zh">ICAIS 2025 文献问答赛道第一名</h3>
@@ -1114,8 +1122,40 @@
             </div>
           </div>
 
+          <!-- AAAI accepted moved to 2025.11 -->
           <div class="timeline-item">
-            <div class="timeline-date">2025.06</div>
+            <div class="timeline-date">
+              <span class="tl-badge" aria-hidden="true" title="Paper Accepted">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              2025.11
+            </div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">AAAI 2026 Accepted</h3>
+              <h3 class="lang-block lang-zh">AAAI 2026 论文录用</h3>
+              <div class="timeline-sub">
+                <span class="lang-block lang-en">
+                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.
+                </span>
+                <span class="lang-block lang-zh">
+                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Three-Good Student -->
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span class="tl-badge" aria-hidden="true" title="Honor">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              2025.06
+            </div>
             <div class="timeline-content">
               <h3 class="lang-block lang-en">“Three-Good Student” Award @ UCAS</h3>
               <h3 class="lang-block lang-zh">国科大“三好学生”</h3>
@@ -1124,9 +1164,16 @@
             </div>
           </div>
 
-          <!-- 2024 -->
+          <!-- ECCV BRAVO -->
           <div class="timeline-item">
-            <div class="timeline-date">2024.10</div>
+            <div class="timeline-date">
+              <span class="tl-badge" aria-hidden="true" title="Competition">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 7h8M9 11h6M10 15h4M7 3h10v18H7V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              2024.10
+            </div>
             <div class="timeline-content">
               <h3 class="lang-block lang-en">1st Place · ECCV 2024 BRAVO Challenge (Track 2)</h3>
               <h3 class="lang-block lang-zh">ECCV 2024 BRAVO Challenge Track 2 第一名</h3>
@@ -1135,12 +1182,12 @@
             </div>
           </div>
 
-          <!-- Current -->
+          <!-- Current (PhD only) -->
           <div class="timeline-item">
             <div class="timeline-date">Current</div>
             <div class="timeline-content">
-              <h3 class="lang-block lang-en">PhD Student @ UCAS · Researcher @ CASIA</h3>
-              <h3 class="lang-block lang-zh">博士研究生 @ 国科大 · 研究员 @ 自动化所</h3>
+              <h3 class="lang-block lang-en">PhD Student @ UCAS</h3>
+              <h3 class="lang-block lang-zh">博士研究生 @ 国科大</h3>
               <div class="timeline-sub">
                 <span class="lang-block lang-en">
                   School of Future Technology, University of Chinese Academy of Sciences (UCAS) ·
@@ -1182,24 +1229,25 @@
           <div class="lang-block lang-en">
             <p>
               I am <strong>Long Qian</strong> (aka <strong>Neymar QL</strong>), a PhD student in Artificial Intelligence at the
-              <strong>School of Future Technology, University of Chinese Academy of Sciences (UCAS)</strong>, and a researcher at the
+              <strong>School of Future Technology, University of Chinese Academy of Sciences (UCAS)</strong>, and working with the
               <strong>Zidong Taichu Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences (CASIA)</strong>.
             </p>
             <p>
               My research directions are relatively independent and include:
               <strong>Vision-Language Models (VLM)</strong>, <strong>Mixture-of-Experts (MoE)</strong>,
-              <strong>Anomaly Detection</strong>, <strong>Instance Segmentation</strong>,
-              <strong>Object Detection & Tracking</strong>, and <strong>AI for Science (AI4S)</strong>.
+              <strong>AI for Science (AI4S)</strong>, <strong>Anomaly Detection</strong>, <strong>Instance Segmentation</strong>,
+              and <strong>Object Detection & Tracking</strong>.
             </p>
             <div class="glass-panel" style="margin-top:14px;">
               <div style="font-weight:900; color:var(--text-main); font-family:var(--font-display); margin-bottom:8px;">Current keywords</div>
               <div class="pill-row">
-                <span class="pill strong">Language-conditioned anomaly synthesis</span>
-                <span class="pill strong">Quality-aware training signals</span>
-                <span class="pill">Robust perception</span>
-                <span class="pill">MoE routing</span>
-                <span class="pill">Industrial inspection</span>
-                <span class="pill">AI4S priors</span>
+                <!-- Reordered: MoE / VLM / AI4S first -->
+                <span class="pill strong">MoE</span>
+                <span class="pill strong">VLM</span>
+                <span class="pill strong">AI4S</span>
+                <span class="pill">Anomaly Detection</span>
+                <span class="pill">Instance Segmentation</span>
+                <span class="pill">Object Detection & Tracking</span>
               </div>
             </div>
           </div>
@@ -1208,23 +1256,23 @@
             <p>
               我是<strong>钱隆</strong>（网络昵称 <strong>Neymar QL</strong>），现为
               <strong>中国科学院大学未来技术学院</strong>人工智能方向博士研究生，
-              同时在<strong>中国科学院自动化研究所紫东太初大模型研究中心</strong>从事科研工作。
+              并在<strong>中国科学院自动化研究所紫东太初大模型研究中心</strong>开展科研工作。
             </p>
             <p>
               我的研究方向相对独立，包含：
               <strong>视觉语言模型（VLM）</strong>、<strong>混合专家（MoE）</strong>、
-              <strong>异常检测</strong>、<strong>实例分割</strong>、
-              <strong>目标检测与追踪</strong>以及 <strong>AI4S</strong>。
+              <strong>AI4S</strong>、<strong>异常检测</strong>、<strong>实例分割</strong>、
+              <strong>目标检测与追踪</strong>。
             </p>
             <div class="glass-panel" style="margin-top:14px;">
               <div style="font-weight:900; color:var(--text-main); font-family:var(--font-display); margin-bottom:8px;">当前关键词</div>
               <div class="pill-row">
-                <span class="pill strong">语言条件异常合成</span>
-                <span class="pill strong">质量感知信号</span>
-                <span class="pill">鲁棒感知</span>
-                <span class="pill">MoE 路由</span>
-                <span class="pill">工业检测</span>
-                <span class="pill">AI4S 先验</span>
+                <span class="pill strong">MoE</span>
+                <span class="pill strong">VLM</span>
+                <span class="pill strong">AI4S</span>
+                <span class="pill">异常检测</span>
+                <span class="pill">实例分割</span>
+                <span class="pill">目标检测与追踪</span>
               </div>
             </div>
           </div>
@@ -1242,25 +1290,15 @@
         </div>
 
         <div class="highlight-card">
-          <div class="highlight-date">2026</div>
-          <div class="highlight-text">
-            <strong class="lang-block lang-en">AAAI 2026 Accepted</strong>
-            <strong class="lang-block lang-zh">AAAI 2026 论文录用</strong>
-            <span class="lang-block lang-en">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.</span>
-            <span class="lang-block lang-zh">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。</span>
-          </div>
-        </div>
-
-        <div class="highlight-card">
           <div class="highlight-date">01/26</div>
           <div class="highlight-text">
-            <strong class="lang-block lang-en">ICASSP 2026 Accepted (Jan 17, 2026)</strong>
-            <strong class="lang-block lang-zh">ICASSP 2026 接收（2026.01.17）</strong>
+            <strong class="lang-block lang-en">ICASSP 2026 Accepted </strong>
+            <strong class="lang-block lang-zh">ICASSP 2026 接收 </strong>
             <span class="lang-block lang-en">MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection.</span>
             <span class="lang-block lang-zh">MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection。</span>
           </div>
         </div>
-
+        
         <div class="highlight-card">
           <div class="highlight-date">11/25</div>
           <div class="highlight-text">
@@ -1268,6 +1306,16 @@
             <strong class="lang-block lang-zh">ICAIS 2025 文献问答赛道第一名</strong>
             <span class="lang-block lang-en">The 1st International Conference on AI Scientists (ICAIS 2025).</span>
             <span class="lang-block lang-zh">国际 AI 科学家大会（ICAIS 2025）。</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">11/25</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">AAAI 2026 Accepted</strong>
+            <strong class="lang-block lang-zh">AAAI 2026 论文录用</strong>
+            <span class="lang-block lang-en">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.</span>
+            <span class="lang-block lang-zh">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。</span>
           </div>
         </div>
 
@@ -1345,7 +1393,7 @@
             </div>
           </article>
 
-          <!-- Friend or Foe (remove MoE tag) -->
+          <!-- Friend or Foe (Anomaly only) -->
           <article class="pub-card" data-tags="anomaly">
             <div class="pub-meta">arXiv 2024</div>
             <div class="pub-title">Friend or Foe? Harnessing Controllable Overfitting for Anomaly Detection (COAD)</div>
@@ -1494,7 +1542,6 @@
       if (label) label.textContent = (theme === 'dark') ? 'Dark' : 'Light';
 
       if (iconWrap) {
-        // Sun for Light, Moon for Dark
         iconWrap.innerHTML = (theme === 'dark')
           ? `<svg viewBox="0 0 24 24" fill="none">
                <path d="M21 13.2A8.5 8.5 0 0 1 10.8 3a7 7 0 1 0 10.2 10.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -1518,7 +1565,6 @@
 
     // init language + theme
     (function init() {
-      // lang
       let savedLang = 'en';
       try { savedLang = localStorage.getItem('site_lang') || 'en'; } catch (e) {}
       applyLang(savedLang === 'zh' ? 'zh' : 'en');

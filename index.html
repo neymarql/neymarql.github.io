@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Long Qian (Neymar QL) | AI Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Homepage of Long Qian (钱隆, Neymar QL), PhD student in Artificial Intelligence at UCAS & Researcher at CASIA." />
+
+  <!-- Fonts: Plus Jakarta Sans for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* === Design Tokens === */
+    :root {
+      /* Theme-aware tokens (default: LIGHT) */
+      --bg-deep: #f6f7fb;
+      --bg-gradient-start: #ffffff;
+      --bg-gradient-end: #eef2ff;
+
+      --glass-surface: rgba(255, 255, 255, 0.72);
+      --glass-border: rgba(15, 23, 42, 0.10);
+      --glass-highlight: rgba(15, 23, 42, 0.05);
+
+      --accent-primary: #4f46e5; /* Indigo */
+      --accent-glow: rgba(79, 70, 229, 0.22);
+      --accent-secondary: #0891b2; /* Cyan */
+
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-faint: #64748b;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 6px 12px -6px rgba(15, 23, 42, 0.25);
+      --shadow-lg: 0 26px 50px -20px rgba(15, 23, 42, 0.35);
+
+      --font-sans: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+      --font-display: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+
+      --anim-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      /* Extra theme helpers */
+      --nav-bg: rgba(255, 255, 255, 0.72);
+      --nav-border: rgba(15, 23, 42, 0.12);
+      --btn-subtle-bg: rgba(15, 23, 42, 0.05);
+      --btn-subtle-border: rgba(15, 23, 42, 0.10);
+      --panel-inner: rgba(15, 23, 42, 0.04);
+      --panel-inner-border: rgba(15, 23, 42, 0.08);
+      --pattern-opacity: 0.22;
+    }
+
+    /* DARK MODE overrides */
+    body[data-theme="dark"] {
+      --bg-deep: #030308;
+      --bg-gradient-start: #080812;
+      --bg-gradient-end: #020205;
+
+      --glass-surface: rgba(20, 25, 40, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-highlight: rgba(255, 255, 255, 0.03);
+
+      --accent-primary: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.40);
+      --accent-secondary: #06b6d4;
+
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.30);
+      --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.50);
+
+      --nav-bg: rgba(10, 10, 16, 0.72);
+      --nav-border: rgba(255, 255, 255, 0.10);
+      --btn-subtle-bg: rgba(255, 255, 255, 0.06);
+      --btn-subtle-border: rgba(255, 255, 255, 0.08);
+      --panel-inner: rgba(0, 0, 0, 0.22);
+      --panel-inner-border: rgba(255, 255, 255, 0.06);
+      --pattern-opacity: 0.55;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    html { font-size: 16px; }
+    body {
+      margin: 0;
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.06) 0%, transparent 40%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.75;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Background Pattern (theme-aware via currentColor + opacity) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+      opacity: var(--pattern-opacity);
+    }
+
+    a { text-decoration: none; color: inherit; transition: color 0.2s; }
+    strong { color: var(--text-main); font-weight: 600; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 6px 0; color: var(--text-muted); }
+
+    /* Language Switching */
+    .lang-block.lang-zh { display: none; }
+    body[data-lang="zh"] .lang-block.lang-en { display: none; }
+    body[data-lang="zh"] .lang-block.lang-zh { display: block; }
+
+    /* Layout */
+    .page-wrapper {
+      max-width: 1560px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 34px;
+      padding-top: 104px;
+      padding-bottom: 70px;
+      align-items: start;
+    }
+    main { min-width: 0; }
+    @media (max-width: 1100px) {
+      .page-wrapper { grid-template-columns: 330px 1fr; gap: 26px; }
+    }
+    @media (max-width: 960px) {
+      .page-wrapper { grid-template-columns: 1fr; gap: 24px; padding-top: 92px; }
+    }
+
+    /* === Header / Nav === */
+    .nav-fixed {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 44px);
+      max-width: 1560px;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--nav-border);
+      border-radius: 99px;
+      padding: 8px 12px 8px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.22);
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand { display: flex; align-items: center; gap: 12px; min-width: 180px; }
+    .nav-brand-mark {
+      width: 10px; height: 10px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent-primary);
+    }
+    .nav-brand-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      background: linear-gradient(135deg, var(--text-main) 0%, rgba(100,116,139,0.9) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-menu { display: flex; align-items: center; gap: 6px; }
+    .nav-item {
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 99px;
+      transition: all 0.2s var(--anim-ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-item:hover { color: var(--text-main); background: var(--btn-subtle-bg); border: 1px solid var(--btn-subtle-border); }
+    .nav-item.active { color: var(--text-main); background: rgba(79,70,229,0.12); border: 1px solid rgba(79,70,229,0.18); }
+
+    .nav-icon { width: 14px; height: 14px; opacity: 0.9; display: inline-block; }
+    .nav-icon svg { width: 14px; height: 14px; display: block; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Language switch (kept) */
+    .lang-switch {
+      background: var(--btn-subtle-bg);
+      border-radius: 99px;
+      padding: 3px;
+      display: flex;
+      border: 1px solid var(--btn-subtle-border);
+    }
+    .lang-btn {
+      border: none;
+      background: none;
+      color: var(--text-faint);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--accent-primary);
+      color: #fff;
+      box-shadow: 0 2px 10px var(--accent-glow);
+    }
+
+    /* Theme switch (NEW) */
+    .theme-toggle {
+      border: 1px solid var(--btn-subtle-border);
+      background: var(--btn-subtle-bg);
+      border-radius: 999px;
+      padding: 7px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s var(--anim-ease), background 0.2s var(--anim-ease);
+      font-weight: 800;
+      color: var(--text-muted);
+      font-size: 12px;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .theme-toggle:hover { transform: translateY(-1px); }
+    .theme-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      box-shadow: 0 0 10px var(--accent-glow);
+      flex: 0 0 auto;
+    }
+    .theme-icon {
+      width: 16px; height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.95;
+    }
+    .theme-icon svg { width: 16px; height: 16px; display: block; }
+
+    @media (max-width: 860px) {
+      .nav-menu { display: none; }
+      .nav-fixed { padding: 8px 12px; }
+    }
+
+    /* === Sidebar Profile === */
+    .profile-card {
+      position: sticky;
+      top: 102px;
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .profile-header { text-align: center; }
+    .avatar-container {
+      width: 102px;
+      height: 102px;
+      margin: 0 auto 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 16px 32px -8px var(--accent-glow);
+      position: relative;
+    }
+    .avatar-container::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.42), transparent);
+      z-index: -1;
+      opacity: 0.40;
+    }
+
+    .profile-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 4px;
+      letter-spacing: 0.01em;
+    }
+    .profile-title {
+      font-size: 14px;
+      color: var(--accent-secondary);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .inst-badges {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin: 10px 0 4px;
+      text-align: left;
+    }
+    .inst-badge {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 10px;
+      border-radius: 12px;
+      background: var(--panel-inner);
+      border: 1px solid var(--panel-inner-border);
+    }
+    .inst-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--btn-subtle-border);
+      box-shadow: 0 10px 22px -12px rgba(0,0,0,0.18);
+      flex: 0 0 auto;
+      color: var(--text-main);
+    }
+    body[data-theme="dark"] .inst-logo {
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 10px 22px -12px rgba(0,0,0,0.6);
+    }
+    .inst-logo svg { width: 16px; height: 16px; opacity: 0.95; }
+    .inst-text { line-height: 1.35; }
+    .inst-text .en { font-size: 12px; color: var(--text-main); font-weight: 800; }
+    .inst-text .zh { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: rgba(79,70,229,0.06);
+      color: var(--text-muted);
+      border: 1px solid rgba(79,70,229,0.12);
+      transition: all 0.2s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    body[data-theme="dark"] .tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-muted);
+    }
+    .tag:hover {
+      background: rgba(79,70,229,0.12);
+      color: var(--text-main);
+      border-color: rgba(79,70,229,0.18);
+    }
+
+    .profile-bio {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      text-align: left;
+      background: var(--panel-inner);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--panel-inner-border);
+    }
+
+    .contact-info {
+      font-size: 12px;
+      color: var(--text-faint);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+      text-align: left;
+    }
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 10px;
+      border: 1px solid var(--panel-inner-border);
+      gap: 10px;
+    }
+    body[data-theme="light"] .contact-row {
+      background: rgba(15,23,42,0.03);
+    }
+    .contact-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .contact-left span.value {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 230px;
+      color: var(--text-muted);
+    }
+    body[data-theme="dark"] .contact-left span.value { color: #cbd5e1; }
+
+    .copy-btn {
+      background: rgba(6, 182, 212, 0.10);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      color: var(--accent-secondary);
+      font-size: 10px;
+      font-weight: 900;
+      cursor: pointer;
+      padding: 3px 8px;
+      border-radius: 8px;
+      transition: transform 0.15s var(--anim-ease), background 0.2s var(--anim-ease);
+      flex: 0 0 auto;
+    }
+    .copy-btn:hover { transform: translateY(-1px); background: rgba(6, 182, 212, 0.16); }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--btn-subtle-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.2s var(--anim-ease);
+      border: 1px solid var(--btn-subtle-border);
+    }
+    .social-btn:hover {
+      background: var(--accent-primary);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px var(--accent-glow);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 960px) {
+      .profile-card { position: relative; top: 0; }
+      .contact-left span.value { max-width: 100%; }
+    }
+
+    /* === Main Content === */
+    .section {
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0.01em;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 22px;
+      background: var(--accent-primary);
+      border-radius: 4px;
+      box-shadow: 0 0 12px var(--accent-glow);
+      flex: 0 0 auto;
+    }
+    .section-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.95;
+      margin-left: 2px;
+    }
+    .section-icon svg { width: 18px; height: 18px; display: block; }
+
+    .prose {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      max-width: 980px;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid rgba(79,70,229,0.18);
+      max-width: 980px;
+    }
+    body[data-theme="dark"] .timeline { border-left: 2px solid rgba(255,255,255,0.06); }
+
+    .timeline-item { position: relative; margin-bottom: 18px; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg-deep);
+      border: 2px solid var(--accent-primary);
+      box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.10);
+    }
+    body[data-theme="dark"] .timeline-item::before {
+      box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.10);
+    }
+
+    .timeline-date {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--accent-secondary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .timeline-content {
+      background: linear-gradient(to right, rgba(79,70,229,0.05), transparent);
+      padding: 16px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--panel-inner-border);
+    }
+    body[data-theme="dark"] .timeline-content {
+      background: linear-gradient(to right, rgba(255,255,255,0.035), transparent);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .timeline-content h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--text-main);
+      font-weight: 800;
+      font-family: var(--font-display);
+      letter-spacing: 0.01em;
+      line-height: 1.35;
+    }
+    .timeline-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Publications */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--btn-subtle-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.2s var(--anim-ease);
+      white-space: nowrap;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #fff;
+    }
+
+    .pub-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 20px 20px;
+      margin-bottom: 16px;
+      transition: all 0.3s var(--anim-ease);
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+    .pub-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent-primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .pub-card:hover {
+      transform: translateY(-2px) scale(1.01);
+      border-color: rgba(79, 70, 229, 0.22);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.28);
+    }
+    body[data-theme="dark"] .pub-card:hover {
+      border-color: rgba(99, 102, 241, 0.32);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.55);
+    }
+    .pub-card:hover::before { opacity: 1; }
+
+    .pub-meta {
+      font-size: 11px;
+      color: var(--accent-secondary);
+      margin-bottom: 6px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .pub-title {
+      font-size: 16px;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+    .pub-venue {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      row-gap: 8px;
+      align-items: center;
+    }
+    .link-item {
+      font-size: 12px;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--btn-subtle-border);
+      background: rgba(79,70,229,0.06);
+      transition: all 0.2s var(--anim-ease);
+      white-space: nowrap;
+    }
+    body[data-theme="dark"] .link-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .link-item:hover {
+      opacity: 1;
+      color: var(--accent-secondary);
+      border-color: rgba(6, 182, 212, 0.25);
+      background: rgba(6, 182, 212, 0.08);
+      transform: translateY(-1px);
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: rgba(15,23,42,0.04);
+      border: 1px solid rgba(15,23,42,0.08);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    body[data-theme="dark"] .pill {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-muted);
+    }
+    .pill.strong {
+      color: #0f172a;
+      border-color: rgba(6,182,212,0.22);
+      background: rgba(6,182,212,0.12);
+    }
+    body[data-theme="dark"] .pill.strong {
+      color: #e0f2fe;
+      border-color: rgba(6,182,212,0.22);
+      background: rgba(6,182,212,0.09);
+    }
+
+    /* Projects Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 18px;
+      max-width: 1200px;
+    }
+    .project-card {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s var(--anim-ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      background: rgba(79,70,229,0.05);
+      border-color: rgba(6, 182, 212, 0.22);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px -14px rgba(0,0,0,0.22);
+    }
+    body[data-theme="dark"] .project-card:hover {
+      background: rgba(255,255,255,0.035);
+      box-shadow: 0 12px 28px -14px rgba(0,0,0,0.6);
+    }
+    .project-title {
+      font-weight: 900;
+      font-family: var(--font-display);
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .project-tag {
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 8px;
+      background: rgba(79,70,229,0.06);
+      border-radius: 10px;
+      color: var(--text-muted);
+      border: 1px solid rgba(79,70,229,0.12);
+      white-space: nowrap;
+    }
+    body[data-theme="dark"] .project-tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Highlights */
+    .highlight-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 16px;
+      background: linear-gradient(90deg, rgba(79, 70, 229, 0.06), transparent);
+      border-left: 2px solid var(--accent-primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 12px;
+      max-width: 980px;
+    }
+    body[data-theme="dark"] .highlight-card {
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.06), transparent);
+    }
+    .highlight-date {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 18px;
+      color: rgba(15,23,42,0.18);
+      min-width: 70px;
+      text-align: center;
+      line-height: 1;
+    }
+    body[data-theme="dark"] .highlight-date { color: rgba(255,255,255,0.18); }
+    .highlight-text strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 900;
+      letter-spacing: 0.01em;
+    }
+    .highlight-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--accent-primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 10px 20px var(--accent-glow);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s var(--anim-ease);
+      z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-2px); }
+
+    /* Small divider card */
+    .glass-panel {
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 18px 18px;
+      max-width: 980px;
+    }
+
+    section { scroll-margin-top: 110px; }
+  </style>
+</head>
+
+<!-- DEFAULT: LIGHT -->
+<body data-lang="en" data-theme="light">
+  <!-- Navigation -->
+  <nav class="nav-fixed">
+    <div class="nav-brand">
+      <div class="nav-brand-mark"></div>
+      <span class="nav-brand-text">LONG QIAN</span>
+    </div>
+
+    <div class="nav-menu">
+      <a href="#timeline" class="nav-item" data-nav="timeline">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 3v3M17 3v3M4 8h16M6 12h5M6 16h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">Timeline</span>
+        <span class="lang-block lang-zh">时间线</span>
+      </a>
+
+      <a href="#about" class="nav-item" data-nav="about">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">About</span>
+        <span class="lang-block lang-zh">简介</span>
+      </a>
+
+      <a href="#highlights" class="nav-item" data-nav="highlights">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">Highlights</span>
+        <span class="lang-block lang-zh">重要事件</span>
+      </a>
+
+      <a href="#publications" class="nav-item" data-nav="publications">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h10v18H7zM9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">Publications</span>
+        <span class="lang-block lang-zh">论文</span>
+      </a>
+
+      <a href="#projects" class="nav-item" data-nav="projects">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 7V5h10v2M6 7v12h12V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">Projects</span>
+        <span class="lang-block lang-zh">项目</span>
+      </a>
+
+      <a href="#contact" class="nav-item" data-nav="contact">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="lang-block lang-en">Contact</span>
+        <span class="lang-block lang-zh">联系</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <!-- THEME TOGGLE (NEW) -->
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-dot" aria-hidden="true"></span>
+        <span class="theme-icon" aria-hidden="true" id="themeIcon">
+          <!-- Sun by default (light) -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span id="themeLabel">Light</span>
+      </button>
+
+      <!-- Language switch (existing) -->
+      <div class="lang-switch" role="tablist" aria-label="Language switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">CN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <!-- Sidebar -->
+    <aside>
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar-container">LQ</div>
+
+          <h1 class="profile-name">
+            <span class="lang-block lang-en">Long Qian</span>
+            <span class="lang-block lang-zh">钱隆</span>
+          </h1>
+
+          <div class="profile-title">
+            <span class="lang-block lang-en">AI Researcher · Neymar QL</span>
+            <span class="lang-block lang-zh">AI 研究员 · Neymar QL</span>
+          </div>
+
+          <!-- Institutions -->
+          <div class="inst-badges">
+            <div class="inst-badge">
+              <div class="inst-logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 10.5 12 4l9 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 10v9h14v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 19v-6h8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="inst-text">
+                <div class="en lang-block lang-en">School of Future Technology, UCAS</div>
+                <div class="zh lang-block lang-zh">中国科学院大学 · 未来技术学院</div>
+              </div>
+            </div>
+
+            <div class="inst-badge">
+              <div class="inst-logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v6m0 0a4 4 0 1 0 0 8m0-8a4 4 0 1 1 0 8m-7 6h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="inst-text">
+                <div class="en lang-block lang-en">Zidong Taichu Foundation Model Research Center, CASIA</div>
+                <div class="zh lang-block lang-zh">中国科学院自动化研究所 · 紫东太初大模型研究中心</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tags-container">
+            <span class="tag">VLM</span>
+            <span class="tag">MoE</span>
+            <span class="tag">Anomaly Detection</span>
+            <span class="tag">Instance Segmentation</span>
+            <span class="tag">Object Detection & Tracking</span>
+            <span class="tag">AI4S</span>
+          </div>
+
+          <div class="profile-bio">
+            <span class="lang-block lang-en">
+              PhD student at UCAS and researcher at CASIA (Zidong Taichu). My research directions are relatively independent:
+              VLM, MoE, anomaly detection, instance segmentation, object detection & tracking, and AI for Science (AI4S).
+            </span>
+            <span class="lang-block lang-zh">
+              国科大博士研究生，中科院自动化所紫东太初团队成员。研究方向相对独立：
+              VLM、MoE、异常检测、实例分割、目标检测与追踪，以及 AI4S。
+            </span>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-row">
+              <div class="contact-left">
+                <span aria-hidden="true">📧</span>
+                <span class="value">qianlong2024@ia.ac.cn</span>
+              </div>
+              <button class="copy-btn" onclick="copyText('qianlong2024@ia.ac.cn', this)">Copy</button>
+            </div>
+            <div class="contact-row">
+              <div class="contact-left">
+                <span aria-hidden="true">📧</span>
+                <span class="value">qianlong20@mails.ucas.ac.cn</span>
+              </div>
+              <button class="copy-btn" onclick="copyText('qianlong20@mails.ucas.ac.cn', this)">Copy</button>
+            </div>
+            <div class="contact-row">
+              <div class="contact-left">
+                <span aria-hidden="true">📍</span>
+                <span class="value">Beijing, China</span>
+              </div>
+              <span style="font-size:10px; color:var(--text-faint); font-weight:900;">UTC+8</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/neymarql" target="_blank" class="social-btn" title="GitHub">🐙</a>
+          <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" target="_blank" class="social-btn" title="Google Scholar">🎓</a>
+          <a href="#contact" class="social-btn" title="Email">✉️</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Timeline / Intro -->
+      <section id="timeline" class="section visible">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 3v3M17 3v3M4 8h16M6 12h5M6 16h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">Timeline</span>
+          <span class="lang-block lang-zh">时间线</span>
+        </div>
+
+        <div class="timeline">
+          <!-- 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-date">2026.02</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">AAAI 2026 Accepted</h3>
+              <h3 class="lang-block lang-zh">AAAI 2026 论文录用</h3>
+              <div class="timeline-sub">
+                <span class="lang-block lang-en">
+                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.
+                </span>
+                <span class="lang-block lang-zh">
+                  Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2026.01.17</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">ICASSP 2026 Accepted</h3>
+              <h3 class="lang-block lang-zh">ICASSP 2026 论文接收</h3>
+              <div class="timeline-sub">
+                <span class="lang-block lang-en">
+                  MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection.
+                </span>
+                <span class="lang-block lang-zh">
+                  MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection。
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline-item">
+            <div class="timeline-date">2025.11</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">1st Place · ICAIS 2025 (Literature Q&A Track)</h3>
+              <h3 class="lang-block lang-zh">ICAIS 2025 文献问答赛道第一名</h3>
+              <div class="timeline-sub lang-block lang-en">The 1st International Conference on AI Scientists (ICAIS 2025).</div>
+              <div class="timeline-sub lang-block lang-zh">国际 AI 科学家大会（ICAIS 2025）。</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2025.06</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">“Three-Good Student” Award @ UCAS</h3>
+              <h3 class="lang-block lang-zh">国科大“三好学生”</h3>
+              <div class="timeline-sub lang-block lang-en">Recognition for excellence in overall performance.</div>
+              <div class="timeline-sub lang-block lang-zh">综合表现优异获得荣誉称号。</div>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="timeline-item">
+            <div class="timeline-date">2024.10</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">1st Place · ECCV 2024 BRAVO Challenge (Track 2)</h3>
+              <h3 class="lang-block lang-zh">ECCV 2024 BRAVO Challenge Track 2 第一名</h3>
+              <div class="timeline-sub lang-block lang-en">The competition is held as a workshop challenge; the results paper is officially published at ECCV 2024.</div>
+              <div class="timeline-sub lang-block lang-zh">比赛以 Workshop Challenge 形式举办；结果论文为 ECCV 2024 正式发表。</div>
+            </div>
+          </div>
+
+          <!-- Current -->
+          <div class="timeline-item">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">PhD Student @ UCAS · Researcher @ CASIA</h3>
+              <h3 class="lang-block lang-zh">博士研究生 @ 国科大 · 研究员 @ 自动化所</h3>
+              <div class="timeline-sub">
+                <span class="lang-block lang-en">
+                  School of Future Technology, University of Chinese Academy of Sciences (UCAS) ·
+                  Zidong Taichu Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences (CASIA).
+                </span>
+                <span class="lang-block lang-zh">
+                  中国科学院大学未来技术学院 · 中国科学院自动化研究所紫东太初大模型研究中心。
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Undergraduate -->
+          <div class="timeline-item">
+            <div class="timeline-date">2020.09 – 2024.07</div>
+            <div class="timeline-content">
+              <h3 class="lang-block lang-en">B.Eng. in Computer Science and Technology @ UCAS</h3>
+              <h3 class="lang-block lang-zh">本科：计算机科学与技术 @ 中国科学院大学</h3>
+              <div class="timeline-sub">
+                <span class="lang-block lang-en">Major: Computer Science and Technology.</span>
+                <span class="lang-block lang-zh">专业：计算机科学与技术。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">About</span>
+          <span class="lang-block lang-zh">简介</span>
+        </div>
+
+        <div class="prose">
+          <div class="lang-block lang-en">
+            <p>
+              I am <strong>Long Qian</strong> (aka <strong>Neymar QL</strong>), a PhD student in Artificial Intelligence at the
+              <strong>School of Future Technology, University of Chinese Academy of Sciences (UCAS)</strong>, and a researcher at the
+              <strong>Zidong Taichu Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences (CASIA)</strong>.
+            </p>
+            <p>
+              My research directions are relatively independent and include:
+              <strong>Vision-Language Models (VLM)</strong>, <strong>Mixture-of-Experts (MoE)</strong>,
+              <strong>Anomaly Detection</strong>, <strong>Instance Segmentation</strong>,
+              <strong>Object Detection & Tracking</strong>, and <strong>AI for Science (AI4S)</strong>.
+            </p>
+            <div class="glass-panel" style="margin-top:14px;">
+              <div style="font-weight:900; color:var(--text-main); font-family:var(--font-display); margin-bottom:8px;">Current keywords</div>
+              <div class="pill-row">
+                <span class="pill strong">Language-conditioned anomaly synthesis</span>
+                <span class="pill strong">Quality-aware training signals</span>
+                <span class="pill">Robust perception</span>
+                <span class="pill">MoE routing</span>
+                <span class="pill">Industrial inspection</span>
+                <span class="pill">AI4S priors</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang-block lang-zh">
+            <p>
+              我是<strong>钱隆</strong>（网络昵称 <strong>Neymar QL</strong>），现为
+              <strong>中国科学院大学未来技术学院</strong>人工智能方向博士研究生，
+              同时在<strong>中国科学院自动化研究所紫东太初大模型研究中心</strong>从事科研工作。
+            </p>
+            <p>
+              我的研究方向相对独立，包含：
+              <strong>视觉语言模型（VLM）</strong>、<strong>混合专家（MoE）</strong>、
+              <strong>异常检测</strong>、<strong>实例分割</strong>、
+              <strong>目标检测与追踪</strong>以及 <strong>AI4S</strong>。
+            </p>
+            <div class="glass-panel" style="margin-top:14px;">
+              <div style="font-weight:900; color:var(--text-main); font-family:var(--font-display); margin-bottom:8px;">当前关键词</div>
+              <div class="pill-row">
+                <span class="pill strong">语言条件异常合成</span>
+                <span class="pill strong">质量感知信号</span>
+                <span class="pill">鲁棒感知</span>
+                <span class="pill">MoE 路由</span>
+                <span class="pill">工业检测</span>
+                <span class="pill">AI4S 先验</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section id="highlights" class="section">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">Highlights</span>
+          <span class="lang-block lang-zh">重要事件</span>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">2026</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">AAAI 2026 Accepted</strong>
+            <strong class="lang-block lang-zh">AAAI 2026 论文录用</strong>
+            <span class="lang-block lang-en">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection.</span>
+            <span class="lang-block lang-zh">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection。</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">01/26</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">ICASSP 2026 Accepted (Jan 17, 2026)</strong>
+            <strong class="lang-block lang-zh">ICASSP 2026 接收（2026.01.17）</strong>
+            <span class="lang-block lang-en">MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection.</span>
+            <span class="lang-block lang-zh">MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection。</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">11/25</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">1st Place · ICAIS 2025 (Literature Q&A Track)</strong>
+            <strong class="lang-block lang-zh">ICAIS 2025 文献问答赛道第一名</strong>
+            <span class="lang-block lang-en">The 1st International Conference on AI Scientists (ICAIS 2025).</span>
+            <span class="lang-block lang-zh">国际 AI 科学家大会（ICAIS 2025）。</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">10/24</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">1st Place · ECCV 2024 BRAVO Challenge (Track 2)</strong>
+            <strong class="lang-block lang-zh">ECCV 2024 BRAVO Challenge Track 2 第一名</strong>
+            <span class="lang-block lang-en">The competition is held as a workshop challenge; the results paper is officially published at ECCV 2024.</span>
+            <span class="lang-block lang-zh">比赛以 Workshop Challenge 形式举办；结果论文为 ECCV 2024 正式发表。</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-date">06/25</div>
+          <div class="highlight-text">
+            <strong class="lang-block lang-en">“Three-Good Student” Award · UCAS</strong>
+            <strong class="lang-block lang-zh">国科大“三好学生”</strong>
+            <span class="lang-block lang-en">Recognized for overall excellence.</span>
+            <span class="lang-block lang-zh">综合表现优秀获得荣誉称号。</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications" class="section">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h10v18H7zM9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">Selected Publications</span>
+          <span class="lang-block lang-zh">论文精选</span>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="vlm">VLM</button>
+          <button class="filter-btn" data-filter="anomaly">Anomaly</button>
+          <button class="filter-btn" data-filter="moe">MoE</button>
+        </div>
+
+        <div class="pub-list">
+          <!-- AAAI 2026 -->
+          <article class="pub-card" data-tags="vlm,anomaly">
+            <div class="pub-meta">AAAI 2026 · To Appear</div>
+            <div class="pub-title">Quality-Aware Language-Conditioned Local Auto-Regressive Anomaly Synthesis and Detection</div>
+            <div class="pub-venue">Long Qian, Bingke Zhu, Yingying Chen, Ming Tang, Jinqiao Wang</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2508.03539" class="link-item" target="_blank">📄 Paper</a>
+              <a href="https://github.com/neymarql/QARAD" class="link-item" target="_blank">💻 Code</a>
+              <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" class="link-item" target="_blank">🎓 Scholar</a>
+            </div>
+            <div class="pill-row">
+              <span class="pill strong">AAAI 2026</span>
+              <span class="pill">VLM</span>
+              <span class="pill">Anomaly Synthesis</span>
+              <span class="pill">Quality-aware</span>
+            </div>
+          </article>
+
+          <!-- ICASSP 2026 -->
+          <article class="pub-card" data-tags="anomaly">
+            <div class="pub-meta">ICASSP 2026 · Accepted (2026.01.17)</div>
+            <div class="pub-title">MathPhys-Guided Coarse-to-Fine Anomaly Synthesis with SQE-Driven Bi-Level Optimization for Anomaly Detection</div>
+            <div class="pub-venue">Long Qian, Bingke Zhu, Yingying Chen, Ming Tang, Jinqiao Wang</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2504.12970" class="link-item" target="_blank">📄 Paper</a>
+              <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" class="link-item" target="_blank">🎓 Scholar</a>
+            </div>
+            <div class="pill-row">
+              <span class="pill strong">ICASSP 2026</span>
+              <span class="pill">Anomaly Detection</span>
+              <span class="pill">AI4S priors</span>
+              <span class="pill">Bi-level optimization</span>
+            </div>
+          </article>
+
+          <!-- Friend or Foe (remove MoE tag) -->
+          <article class="pub-card" data-tags="anomaly">
+            <div class="pub-meta">arXiv 2024</div>
+            <div class="pub-title">Friend or Foe? Harnessing Controllable Overfitting for Anomaly Detection (COAD)</div>
+            <div class="pub-venue">Long Qian, Bingke Zhu, Yingying Chen, Ming Tang, Jinqiao Wang</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2412.00560" class="link-item" target="_blank">📄 Paper</a>
+              <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" class="link-item" target="_blank">🎓 Scholar</a>
+            </div>
+            <div class="pill-row">
+              <span class="pill strong">Anomaly Detection</span>
+              <span class="pill">Controllable Overfitting</span>
+            </div>
+          </article>
+
+          <!-- BRAVO results paper (ECCV 2024 official) -->
+          <article class="pub-card" data-tags="seg">
+            <div class="pub-meta">ECCV 2024</div>
+            <div class="pub-title">The BRAVO Semantic Segmentation Challenge Results in UNCV2024</div>
+            <div class="pub-venue">Tuan-Hung Vu, Eduardo Valle, …, <strong>Long Qian</strong>, …, et al.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2409.15107" class="link-item" target="_blank">📄 Paper</a>
+              <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" class="link-item" target="_blank">🎓 Scholar</a>
+            </div>
+            <div class="pill-row">
+              <span class="pill strong">ECCV 2024</span>
+              <span class="pill">Semantic Segmentation</span>
+              <span class="pill">BRAVO Challenge (Workshop)</span>
+            </div>
+          </article>
+
+          <div class="glass-panel" style="margin-top: 14px;">
+            <div class="lang-block lang-en" style="color:var(--text-muted); font-size:13px; line-height:1.75;">
+              For the complete publication list and citation stats, please visit my Google Scholar profile.
+            </div>
+            <div class="lang-block lang-zh" style="color:var(--text-muted); font-size:13px; line-height:1.75;">
+              完整论文列表与引用统计请查看我的 Google Scholar 主页。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects (only keep QARAD/ARAS and InternImage-OOD) -->
+      <section id="projects" class="section">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 7V5h10v2M6 7v12h12V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">Projects</span>
+          <span class="lang-block lang-zh">项目</span>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-title">QARAD / ARAS</div>
+            <div class="project-desc">
+              <span class="lang-block lang-en">Quality-aware, language-conditioned anomaly synthesis and detection via local auto-regressive generation.</span>
+              <span class="lang-block lang-zh">质量感知、语言条件的异常合成与检测（局部自回归生成）。</span>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">VLM</span>
+              <span class="project-tag">GenAI</span>
+              <span class="project-tag">Anomaly</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">InternImage-OOD</div>
+            <div class="project-desc">
+              <span class="lang-block lang-en">Exploring OOD robustness and generalization for vision models based on InternImage, with a focus on real-world distribution shifts.</span>
+              <span class="lang-block lang-zh">基于 InternImage 的视觉模型 OOD 鲁棒性与泛化研究，聚焦真实分布偏移场景。</span>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">OOD</span>
+              <span class="project-tag">Robustness</span>
+              <span class="project-tag">Vision</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lang-block lang-en">Contact</span>
+          <span class="lang-block lang-zh">联系</span>
+        </div>
+
+        <div class="glass-panel" style="text-align:center;">
+          <p style="color:var(--text-muted); margin-bottom:18px; font-size:14px; line-height:1.8;">
+            <span class="lang-block lang-en">Open for research collaborations and academic discussions.</span>
+            <span class="lang-block lang-zh">欢迎科研合作与学术交流。</span>
+          </p>
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <a href="mailto:qianlong2024@ia.ac.cn"
+               style="display:inline-block; background:var(--accent-primary); color:#fff; padding:10px 22px; border-radius:999px; font-weight:900; box-shadow:0 6px 16px var(--accent-glow);">
+              <span class="lang-block lang-en">Say Hello</span>
+              <span class="lang-block lang-zh">发邮件</span>
+            </a>
+            <a href="https://github.com/neymarql" target="_blank"
+               style="display:inline-block; background:var(--btn-subtle-bg); border:1px solid var(--btn-subtle-border); color:var(--text-main); padding:10px 22px; border-radius:999px; font-weight:900;">
+              GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?user=Zd02IWMAAAAJ" target="_blank"
+               style="display:inline-block; background:var(--btn-subtle-bg); border:1px solid var(--btn-subtle-border); color:var(--text-main); padding:10px 22px; border-radius:999px; font-weight:900;">
+              Scholar
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+  <script>
+    /* ---------- Language Logic (persist) ---------- */
+    function applyLang(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        applyLang(lang);
+      });
+    });
+
+    /* ---------- Theme Logic (persist) ---------- */
+    function applyTheme(theme) {
+      document.body.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
+
+      const label = document.getElementById('themeLabel');
+      const iconWrap = document.getElementById('themeIcon');
+
+      if (label) label.textContent = (theme === 'dark') ? 'Dark' : 'Light';
+
+      if (iconWrap) {
+        // Sun for Light, Moon for Dark
+        iconWrap.innerHTML = (theme === 'dark')
+          ? `<svg viewBox="0 0 24 24" fill="none">
+               <path d="M21 13.2A8.5 8.5 0 0 1 10.8 3a7 7 0 1 0 10.2 10.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+             </svg>`
+          : `<svg viewBox="0 0 24 24" fill="none">
+               <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+               <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+             </svg>`;
+      }
+
+      try { localStorage.setItem('site_theme', theme); } catch (e) {}
+    }
+
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = document.body.getAttribute('data-theme') || 'light';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // init language + theme
+    (function init() {
+      // lang
+      let savedLang = 'en';
+      try { savedLang = localStorage.getItem('site_lang') || 'en'; } catch (e) {}
+      applyLang(savedLang === 'zh' ? 'zh' : 'en');
+
+      // theme (DEFAULT: light)
+      let savedTheme = 'light';
+      try { savedTheme = localStorage.getItem('site_theme') || 'light'; } catch (e) {}
+      applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    })();
+
+    /* ---------- Scroll Observer for Fade In ---------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+    /* ---------- Back to top visibility ---------- */
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      if (window.scrollY > 320) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    });
+
+    /* ---------- Copy Text ---------- */
+    function copyText(text, btnEl) {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(text).then(() => {
+        if (!btnEl) return;
+        const original = btnEl.textContent;
+        btnEl.textContent = "✓";
+        setTimeout(() => btnEl.textContent = original, 1200);
+      }).catch(() => {});
+    }
+
+    /* ---------- Filter Publications ---------- */
+    function setFilter(tag) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-filter') === tag);
+      });
+
+      document.querySelectorAll('.pub-card').forEach(card => {
+        const tags = (card.getAttribute('data-tags') || '');
+        const ok = (tag === 'all') || tags.split(',').map(s => s.trim()).includes(tag);
+        if (ok) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 220ms ease';
+            card.style.opacity = '1';
+          });
+        } else {
+          card.style.transition = 'opacity 220ms ease';
+          card.style.opacity = '0';
+          setTimeout(() => card.style.display = 'none', 220);
+        }
+      });
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.addEventListener('click', () => setFilter(b.getAttribute('data-filter')));
+    });
+
+    /* ---------- Nav Active (Scroll Spy) ---------- */
+    const navLinks = Array.from(document.querySelectorAll('.nav-item[data-nav]'));
+    const sections = navLinks
+      .map(a => document.getElementById(a.getAttribute('data-nav')))
+      .filter(Boolean);
+
+    const spy = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio - a.intersectionRatio))[0];
+
+      if (!visible) return;
+      const id = visible.target.id;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('data-nav') === id));
+    }, { threshold: [0.25, 0.4, 0.55] });
+
+    sections.forEach(sec => spy.observe(sec));
+
+    // default filter: all
+    setFilter('all');
+  </script>
+</body>
+</html>
